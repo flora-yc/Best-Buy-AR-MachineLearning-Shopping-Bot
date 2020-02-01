@@ -1,39 +1,113 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {ChatUx} from 'chatux';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { ChatUx } from "chatux";
+import Laptop1 from "./l1.png";
+import Laptop2 from "./l2.png";
+import Laptop3 from "./l3.png";
+import Laptop4 from "./l4.png";
+import Laptop5 from "./l5.png";
+import Hiro from "./hiro.png";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-       </header>
-    </div>
-  );
+// class DisplayItem extends React.Component {
+//   constructor(props) {
+//     super(props);
+//   }
+//   render() {
+//     return (
+//       <div id={this.src} className={this.type}>
+//         <img src={this.src}></img>
+//         <h2>{this.desc}</h2>
+//       </div>
+//     );
+//   }
+// }
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    let arr = new Array();
+    let l1 = (
+      <div id={"l1"} className={"laptop"}>
+        <div id="leftChild">
+          <img id="laptop" src={Laptop1}></img>
+        </div>
+        <div id="rightChild">
+          <h2>{"Samsung Chromebook"}</h2>
+          <img id="hiro" src={Hiro}/>
+        </div>
+        
+      </div>
+    );
+    let l2 = (
+      <div id={"l2"} className={"laptop"}>
+        <div id="leftChild">
+          <img id="laptop" src={Laptop2}></img>
+        </div>
+        <div id="rightChild">
+          <h2>{"MacBook Air"}</h2>
+          <img id="hiro" src={Hiro}/>
+        </div>
+        
+      </div>
+    );
+    let l3 = (
+      <div id={"l3"} className={"laptop"}>
+        <div id="leftChild"><img id="laptop" src={Laptop3}></img></div>
+        <div id="rightChild">
+          <h2>{'Macbook Pro 16"'}</h2>
+        <img id="hiro" src={Hiro}/>
+        </div>
+        
+      </div>
+    );
+    let l4 = (
+      <div id={"l4"} className={"laptop"}>
+        <div id="leftChild">
+          <img id="laptop" src={Laptop4}></img>
+        </div>
+        <div id="rightChild">
+          <h2>{"Dell XPS 15"}</h2>
+          <img id="hiro" src={Hiro}/>
+        </div>
+        
+        
+      </div>
+    );
+    let l5 = (
+      <div id={"l5"} className={"laptop"}>
+        <div id="leftChild">
+          <img id="laptop" src={Laptop5}></img>
+        </div>
+        <div id="rightChild">
+          <h2>{"Surface Book 2"}</h2>
+          <img id="hiro" src={Hiro}/>
+        </div>
+        
+      </div>
+    );
+    arr.push(l1, l2, l3, l4, l5);
+    this.state = {
+      searchTerm: "",
+      displayItems: arr
+    };
+  }
+
+  render() {
+    return <div>{this.state.displayItems}</div>;
+  }
 }
 
 export default App;
 
-const chatux = new ChatUx();
+// const chatux = new ChatUx();
 
-chatux.init({
-  api: {
-      endpoint: 'https://bryan-qna-service-bot.azurewebsites.net/api/messages',//chat server
-      method: 'GET',//HTTP METHOD when requesting chat server
-      dataType: 'json'//json or jsonp is available
-  }
-});
+// chatux.init({
+//   api: {
+//       endpoint: 'https://bryan-qna-service-bot.azurewebsites.net/api/messages',//chat server
+//       method: 'GET',//HTTP METHOD when requesting chat server
+//       dataType: 'json'//json or jsonp is available
+//   }
+// });
 
-chatux.start();
+// chatux.start();

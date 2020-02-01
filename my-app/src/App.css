@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+#laptop {
+  max-width: 50%;
+}
+
+#hiro {
+  max-width: 20%;
+}
+
+#leftChild {
+  float:left;
+}
+
+#rightChild {
+  float:right;
+}
