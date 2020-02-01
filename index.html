@@ -13,12 +13,14 @@
   Example created by Lee Stemkoski: https://github.com/stemkoski
   Based on the AR.js library and examples created by Jerome Etienne: https://github.com/jeromeetienne/AR.js/
 -->>
-<a-scene embedded arjs="trackingMethod:best;">
-	<a-entity scale=".2 .2 .2">
-		</a- gltf-model="assets/ELMSlogo3.gltf" scale="-1 1 1">
-	</a-entity>
-
-	<a-marker-camera preset="hiro"></a-marker-camera>
+<a-scene embedded arjs>
+	<a-marker type="barcode" value="BestBuy1">
+		<a-entity gltf-model="/macbookModel/mbmodel.gltf" scale=".1 .1 .1" rotation="265 0 0"></a-entity>
+	</a-marker>
+	<a-marker type="barcode" value="BestBuy2">
+		<a-entity gltf-model="/speakerModel/bigSpeaker.gltf" scale=".01 .01 .01" rotation="0 0 0"></a-entity>
+	</a-marker>
+	<a-marker-camera preset='hiro'></a-marker-camera>
 </a-scene>
 <script>
 
