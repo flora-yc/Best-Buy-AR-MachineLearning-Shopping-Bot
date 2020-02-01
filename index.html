@@ -3,17 +3,8 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<title>Hello, world!</title>
 	<!-- include three.js library -->
-	<script src='js/three.js'></script>
-	<script src='js/OBJLoader.js'></script>
-	<script src='js/MTLLoader.js'></script>
-	<!-- include jsartookit -->
-	<script src="jsartoolkit5/artoolkit.min.js"></script>
-	<script src="jsartoolkit5/artoolkit.api.js"></script>
-	<!-- include threex.artoolkit -->
-	<script src="threex/threex-artoolkitsource.js"></script>
-	<script src="threex/threex-artoolkitcontext.js"></script>
-	<script src="threex/threex-arbasecontrols.js"></script>
-	<script src="threex/threex-armarkercontrols.js"></script>
+	<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+	<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 </head>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
@@ -21,9 +12,15 @@
 <!-- 
   Example created by Lee Stemkoski: https://github.com/stemkoski
   Based on the AR.js library and examples created by Jerome Etienne: https://github.com/jeromeetienne/AR.js/
--->
+-->>
+<a-scene embedded arjs="trackingMethod:best;">
+	<a-entity scale=".2 .2 .2">
+		</a- gltf-model="assets/ELMSlogo3.gltf" scale="-1 1 1">
+	</a-entity>
 
-<script src="script.js">
+	<a-marker-camera preset="hiro"></a-marker-camera>
+</a-scene>
+<script>
 
 // var scene, camera, renderer, clock, deltaTime, totalTime;
 
