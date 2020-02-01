@@ -5,9 +5,13 @@
 	<!-- include three.js library -->
 	<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
 	<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+	<!-- add this script in order to load a large set of 3D model extensions-->
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 </head>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+	<!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
+	<a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
 <!-- 
   Example created by Lee Stemkoski: https://github.com/stemkoski
@@ -22,7 +26,9 @@
 	<a-marker type="barcode" value="1">
 		<a-entity gltf-model="/speakerModel/bigSpeaker.gltf" scale=".01 .01 .01" rotation="0 0 0"></a-entity>
 	</a-marker>
-	<!-- <a-entity camera></a-entity> -->
+
+	<!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
+        <a-entity camera></a-entity>
 
 </a-scene>
 <script>
