@@ -22,7 +22,7 @@ function App() {
       </header>
     </div>
   );
-} 
+}
 
 export default App;
 
@@ -30,7 +30,7 @@ const chatux = new ChatUx();
 
 chatux.init({
   api: {
-      endpoint: '',//chat server
+      endpoint: 'https://bryan-qna-service-bot.azurewebsites.net/api/messages',//chat server
       method: 'GET',//HTTP METHOD when requesting chat server
       dataType: 'json'//json or jsonp is available
   }
