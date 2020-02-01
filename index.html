@@ -5,28 +5,11 @@
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs>
       <a-marker preset="hiro">
-          <a-box position='0 0.5 0' material='color: yellow;'></a-box>
           <a-entity gltf-model="#tree" scale="1 1 1"></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
-    <script>
-        AFRAME.registerComponent('modify-materials', {
-          init: function () {
-            // Wait for model to load.
-            this.el.addEventListener('model-loaded', () => {
-              // Grab the mesh / scene.
-              const obj = this.el.getObject3D('mesh');
-              // Go over the submeshes and modify materials we want.
-              obj.traverse(node => {
-                if (node.name.indexOf('ship') !== -1) {
-                  node.material.color.set('red');
-                }
-              });
-            });
-          }
-        });
-      </script>
+
       
       <a-scene background="color: #ECECEC">
         <a-assets>
