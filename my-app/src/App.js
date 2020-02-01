@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {ChatUx} from 'chatux';
 
 function App() {
   return (
@@ -24,3 +25,15 @@ function App() {
 } 
 
 export default App;
+
+const chatux = new ChatUx();
+
+chatux.init({
+  api: {
+      endpoint: '',//chat server
+      method: 'GET',//HTTP METHOD when requesting chat server
+      dataType: 'json'//json or jsonp is available
+  }
+});
+
+chatux.start();
