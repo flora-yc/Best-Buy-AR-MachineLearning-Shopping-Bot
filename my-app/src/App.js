@@ -11,7 +11,7 @@ import Hiro from "./hiro.png";
 import HomeTheatre from "./ht.png";
 import Monitor from "./mon.png";
 import Television from "./tv.png"
-import SoundSystem from "./sound_system.jpg";
+import SoundSystem from "./soundsystem.jpg";
 
 // class DisplayItem extends React.Component {
 //   constructor(props) {
@@ -108,17 +108,6 @@ let arr = new Array();
         </div>
       </div>
     );
-    let ss = (
-      <div id={"ht"} className={"laptop"}>
-  <div id="leftChild">
-    <img id="laptop" src={SoundSystem}></img>
-  </div>
-  <div id="rightChild">
-    <h2>{"Sound System"}</h2>
-    <img id="hiro" src={Hiro}/>
-  </div>
-</div>
-);
     let m = (
     <div id={"mon"} className={"laptop"}>
     <div id="leftChild">
