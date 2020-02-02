@@ -8,6 +8,9 @@ import Laptop3 from "./l3.png";
 import Laptop4 from "./l4.png";
 import Laptop5 from "./l5.png";
 import Hiro from "./hiro.png";
+import HomeTheatre from "./ht.png";
+import Monitor from "./mon.png";
+import Television from "./tv.png"
 
 // class DisplayItem extends React.Component {
 //   constructor(props) {
@@ -82,7 +85,44 @@ let arr = new Array();
         </div>
       </div>
     );
-    arr.push(l5, l2, l3, l4, l1);
+    let ht = (
+      <div id={"ht"} className={"laptop"}>
+        <div id="leftChild">
+          <img id="laptop" src={HomeTheatre}></img>
+        </div>
+        <div id="rightChild">
+          <h2>{"Home Theatre"}</h2>
+          <img id="hiro" src={Hiro}/>
+        </div>
+      </div>
+    );
+    let tv = (
+            <div id={"ht"} className={"laptop"}>
+        <div id="leftChild">
+          <img id="laptop" src={Television}></img>
+        </div>
+        <div id="rightChild">
+          <h2>{"TV"}</h2>
+          <img id="hiro" src={Hiro}/>
+        </div>
+      </div>
+    );
+    let m = (
+    <div id={"mon"} className={"laptop"}>
+    <div id="leftChild">
+      <img id="laptop" src={Monitor}></img>
+    </div>
+    <div id="rightChild">
+      <h2>{"Samsung Ultrawide Monitor"}</h2>
+      <img id="hiro" src={Hiro}/>
+    </div>
+  </div>
+);
+    let arr0 = [tv, ht];
+    arr.push(l2, l3, l4, l5);
+    let arr1 = [l3, l4, l5];
+    let arr2 = [l3];
+    let arr4 = [m];
 
 class App extends React.Component {
   constructor(props) {
@@ -90,9 +130,36 @@ class App extends React.Component {
     
     this.state = {
       searchTerm: "",
-      displayItems: [],
+      displayItems: arr0,
+      currState: 0,
     };
 
+  }
+
+  handleClick(e) {
+
+    // Programming MBAir
+    if (this.state.currState == 0) {
+      this.setState({displayItems: arr, currState: 2})
+    }
+    // More Powerful
+    if (this.state.currState == 2) {
+      this.setState({displayItems: arr1, currState: 3})
+    }
+    // More RAM 
+    if (this.state.currState == 3) {
+      this.setState({displayItems: arr2, currState: 4})
+    }
+    // Monitor 
+    if (this.state.currState == 4) {
+      this.setState({displayItems: arr4, currState: 5})
+    }
+        // MacBook Pro 
+        if (this.state.currState == 5) {
+          this.setState({displayItems: arr2})
+        }
+
+    
   }
 
   // componentDidMount() {
@@ -102,7 +169,13 @@ class App extends React.Component {
   //   console.log(this.state.searchTerm);
   // }
   render() {
-    return <div>{this.state.displayItems}</div>;
+    return (
+      <div>
+        <button id="transparentButton" label="oof" className="button" onClick={this.handleClick.bind(this)}>"oof"     </button>
+        {this.state.displayItems}
+      </div>
+    )
+      
   }
 }
 

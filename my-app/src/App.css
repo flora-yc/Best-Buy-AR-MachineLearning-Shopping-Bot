@@ -42,7 +42,7 @@
 }
 
 #hiro {
-  max-width: 20%;
+  max-width: 30%;
 }
 
 #leftChild {
@@ -51,4 +51,17 @@
 
 #rightChild {
   float:right;
+  padding-top: 10%;
+}
+
+#transparentButton {
+  background-color: transparent;
+  text-decoration-color: #ffffff;
+  width: 100%;
+}
+
+.button {
+  font-size: 30px;
+  text-decoration-color: #ffffff;
+  color: #ffffff;
 }
