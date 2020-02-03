@@ -12,6 +12,8 @@ import HomeTheatre from "./ht.png";
 import Monitor from "./mon.png";
 import Television from "./tv.png"
 import SoundSystem from "./soundsystem.jpg";
+import Sound from "./sound.jpg";
+import Mouse from "./newmouse.jpg";
 
 // class DisplayItem extends React.Component {
 //   constructor(props) {
@@ -119,11 +121,35 @@ let arr = new Array();
     </div>
   </div>
 );
-    let arr0 = [tv, ht];
+let s = (
+  <div id={"mon"} className={"laptop"}>
+  <div id="leftChild">
+    <img id="laptop" src={Sound}></img>
+  </div>
+  <div id="rightChild">
+    <h2>{"5.1 Surround Sound System"}</h2>
+    <img id="hiro" src={Hiro}/>
+  </div>
+</div>
+);
+let mouse = (
+  <div id={"mon"} className={"laptop"}>
+  <div id="leftChild">
+    <img id="laptop" src={Mouse}></img>
+  </div>
+  <div id="rightChild">
+    <h2>{"Logitech MX Master 2S Mouse"}</h2>
+    <img id="hiro" src={Hiro}/>
+  </div>
+</div>
+);
+    let arr0 = [tv, ht, s];
     arr.push(l2, l3, l4, l5);
     let arr1 = [l3, l4, l5];
     let arr2 = [l3];
     let arr4 = [m];
+    let arr9 = [tv];
+    let peripherals = [mouse];
 
 class App extends React.Component {
   constructor(props) {
@@ -141,6 +167,9 @@ class App extends React.Component {
 
     // Programming MBAir
     if (this.state.currState == 0) {
+      this.setState({displayItems: arr9, currState: 1})
+    }
+    if (this.state.currState == 1) {
       this.setState({displayItems: arr, currState: 2})
     }
     // More Powerful
@@ -151,12 +180,16 @@ class App extends React.Component {
     if (this.state.currState == 3) {
       this.setState({displayItems: arr2, currState: 4})
     }
-    // Monitor 
+    // Peripherals 
     if (this.state.currState == 4) {
-      this.setState({displayItems: arr4, currState: 5})
+      this.setState({displayItems: peripherals, currState: 5})
+    }
+    // Monitor 
+    if (this.state.currState == 5) {
+      this.setState({displayItems: arr4, currState: 6})
     }
         // MacBook Pro 
-        if (this.state.currState == 5) {
+        if (this.state.currState == 6) {
           this.setState({displayItems: arr2})
         }
 
