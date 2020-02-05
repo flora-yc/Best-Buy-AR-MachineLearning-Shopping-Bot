@@ -1,6 +1,12 @@
 # Shopping Bot
 
-This bot has been created using [Bot Framework](https://dev.botframework.com), it shows how to create a simple bot that accepts input from the user and echoes it back.
+This bot has been created using [Bot Framework](https://dev.botframework.com). We trained our bot using popular inquiries for different categories of tech shopping, and data obtained from the BestBuy Products Developer API. The goal of our bot is to provide the best information and suggestions according to your situation. 
+
+# AR Viewing
+
+After you've been recommended some products, an AR tag will appear alongside it. You can use your phone to scan the tag to visualize it's dimensions and how it would look in person. Using the product dimension data from the BestBuy Products Developer API, each product is scaled to it's most realistic size. 
+
+https://streamable.com/79xn9
 
 ## Prerequisites
 
